@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D0FFF66D2DC74648007F9664 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FFF66C2DC74648007F9664 /* main.swift */; };
+		D0FFF6772DC74B6D007F9664 /* side.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FFF6762DC74B6D007F9664 /* side.swift */; };
+		D0FFF67A2DC74C25007F9664 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FFF6792DC74C25007F9664 /* Cocoa.framework */; };
+		D0FFF67C2DC74C2E007F9664 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FFF67B2DC74C2E007F9664 /* OpenGL.framework */; };
+		D0FFF67E2DC74C31007F9664 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FFF67D2DC74C31007F9664 /* IOKit.framework */; };
+		D0FFF6802DC74C35007F9664 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FFF67F2DC74C35007F9664 /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,12 @@
 /* Begin PBXFileReference section */
 		D0FFF6692DC74648007F9664 /* raylib-xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "raylib-xcode"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FFF66C2DC74648007F9664 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D0FFF6732DC74945007F9664 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		D0FFF6762DC74B6D007F9664 /* side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = side.swift; sourceTree = "<group>"; };
+		D0FFF6792DC74C25007F9664 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D0FFF67B2DC74C2E007F9664 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		D0FFF67D2DC74C31007F9664 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		D0FFF67F2DC74C35007F9664 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FFF6802DC74C35007F9664 /* CoreVideo.framework in Frameworks */,
+				D0FFF67E2DC74C31007F9664 /* IOKit.framework in Frameworks */,
+				D0FFF67C2DC74C2E007F9664 /* OpenGL.framework in Frameworks */,
+				D0FFF67A2DC74C25007F9664 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +58,7 @@
 			children = (
 				D0FFF66B2DC74648007F9664 /* raylib-xcode */,
 				D0FFF66A2DC74648007F9664 /* Products */,
+				D0FFF6782DC74C25007F9664 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +73,22 @@
 		D0FFF66B2DC74648007F9664 /* raylib-xcode */ = {
 			isa = PBXGroup;
 			children = (
+				D0FFF6732DC74945007F9664 /* module.modulemap */,
+				D0FFF6762DC74B6D007F9664 /* side.swift */,
 				D0FFF66C2DC74648007F9664 /* main.swift */,
 			);
 			path = "raylib-xcode";
+			sourceTree = "<group>";
+		};
+		D0FFF6782DC74C25007F9664 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0FFF67F2DC74C35007F9664 /* CoreVideo.framework */,
+				D0FFF67D2DC74C31007F9664 /* IOKit.framework */,
+				D0FFF67B2DC74C2E007F9664 /* OpenGL.framework */,
+				D0FFF6792DC74C25007F9664 /* Cocoa.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FFF6772DC74B6D007F9664 /* side.swift in Sources */,
 				D0FFF66D2DC74648007F9664 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,14 +209,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = .;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lraylib";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -236,12 +271,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = .;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-lraylib";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

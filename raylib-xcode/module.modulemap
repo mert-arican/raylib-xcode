@@ -1,0 +1,11 @@
+//
+//  module.map.modulemap
+//  raylib-xcode
+//
+//  Created by Mert Arıcan on 4.05.2025.
+//
+
+module Raylib {
+    header "/usr/local/include/raylib.h"
+    export *
+}
